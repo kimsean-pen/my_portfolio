@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import AnimatedMenu from './animated-menu';
 import './index.css';
 import './skills-section.css';
 import './experience-section.css';
 import './education-section.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import altairLogo from './assets/altair-logo-light.png';
 import resumeImage from './assets/resume_image.png';
 import runningImage from './assets/running_image.png';

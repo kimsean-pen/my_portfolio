@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import imageSocialMedia from './assets/social-media.jpg';
 import imageHealthBite from './assets/healthbite_teaser_image.png';
 
-import React from 'react';
+//import React from 'react';
 import AnimatedMenu from './animated-menu';
 
 // Define the type for a single project
@@ -41,7 +41,7 @@ const projects: { analysis: Project[]; science: Project[] } = {
 };
 
 function Projects() {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState<'analysis' | 'science'>('analysis');
 
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);

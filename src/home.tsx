@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import type { Schema } from "../amplify/data/resource";
-import { generateClient } from "aws-amplify/data";
+//import { useEffect, useState } from "react";
+//import type { Schema } from "../amplify/data/resource";
+//import { generateClient } from "aws-amplify/data";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDatabase } from '@fortawesome/free-solid-svg-icons';
-import { faPython, faJs, faReact, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faPython, faReact, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useNavigate } from "react-router-dom";
 
 import AnimatedMenu from './animated-menu';
@@ -14,7 +14,7 @@ import aboutImage from './assets/aboutImage.jpeg';
 import tableauLogo from './assets/tableauLogo.png';
 import { faR } from "@fortawesome/free-solid-svg-icons/faR";
 
-const client = generateClient<Schema>();
+//const client = generateClient<Schema>();
 
 function App() {
   const navigate = useNavigate();
