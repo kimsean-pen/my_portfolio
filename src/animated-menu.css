@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+    background: #ddd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu-container {
+    position: fixed;
+    z-index: 999;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2001;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 65px;
+    cursor: pointer;
+}
+
+label {
+    all: unset;
+}
+
+#menu {
+    display: none;
+}
+
+/* Hamburger menu styling */
+.menu {
+    position: relative;
+    width: 40px;
+    height: 3px;
+    background: #1F2232;
+    transition: background 0.3s ease;
+    display: block;
+    border-radius: 2px;
+}
+
+.menu:before,
+.menu:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #1F2232;
+    transition: transform 0.4s ease, top 0.4s ease;
+    border-radius: 2px;
+}
+
+.menu:before {
+    top: -10px;
+}
+
+.menu:after {
+    top: 10px;
+}
+
+#menu:checked~.menu-toggle .menu {
+    background: transparent;
+}
+
+#menu:checked~.menu-toggle .menu:before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+#menu:checked~.menu-toggle .menu:after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.menu-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 33%;
+    background: #FDE8E9;
+    z-index: 0;
+    border-bottom-right-radius: 50% 20%;
+}
+
+.box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    transform: translateY(100%);
+    transition: transform 0.8s ease;
+    transition-delay: 0.7s;
+    overflow: hidden;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#menu:checked~.box {
+    transform: translateY(0);
+}
+
+.box h1 {
+    position: relative;
+    font-size: 40px;
+    margin: 0 40px;
+    cursor: pointer;
+}
+
+.box h1:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #E7C5CF;
+}
+
+.box h1:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #E7C5CF;
+}
+
+.box h1:nth-child(4)::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: #E7C5CF;
+}
+
+.move-item {
+    position: absolute;
+    height: 350px;
+    width: 350px;
+    background: #FDE8E9;
+    border-top-right-radius: 400px;
+    border-bottom-right-radius: 125px;
+    top: -70px;
+    transition: 0.7s ease;
+    transition-delay: 0.1s;
+    transform: translateX(-250px) rotate(45deg);
+    animation: ooz 3s linear infinite;
+    z-index: 0;
+}
+
+@keyframes ooz {
+    50% {
+        border-bottom-left-radius: 300px;
+        border-top-right-radius: 0px;
+    }
+}
+
+/* Blob movement on hover */
+/* Hover behavior */
+/* Blob movement on hover only */
+h1:nth-of-type(1):hover~.move-item {
+    transform: translate(-250px) rotate(45deg);
+}
+
+h1:nth-of-type(2):hover~.move-item {
+    transform: translate(10px) rotate(45deg);
+}
+
+h1:nth-of-type(3):hover~.move-item {
+    transform: translate(280px) rotate(45deg);
+}
+
+
+
+/* Optional: clean link styling */
+.menu-link {
+    text-decoration: none;
+    color: inherit;
+}

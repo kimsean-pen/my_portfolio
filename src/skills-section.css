@@ -1,0 +1,212 @@
+/* === Layout: Skills + Education === */
+.skills-education-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+
+/* === Card-style Sections (shared) === */
+.education-section,
+.skills-section-resume,
+.experience-section {
+    position: relative;
+    padding: 3.5rem 2rem 2rem 2rem;
+    /* top right bottom left */
+    flex: 1;
+    min-width: 320px;
+    border: 2px solid #1F2232;
+    border-radius: 16px;
+    background-color: #FDEDEE;
+    box-sizing: border-box;
+}
+
+/* === Section Title Bubble (Skills, Education, Experience) === */
+section h2.section-heading {
+    position: absolute;
+    top: -30px;
+    left: 2rem;
+    z-index: 2;
+    display: inline-block;
+    background-color: #BF97C3;
+    color: #1F2232;
+    padding: 0.4rem 1.5rem;
+    border-radius: 999px;
+    border: 3px solid black;
+    box-shadow: 0 4px 0 #000;
+    font-family: "Jura", sans-serif;
+    font-size: 2.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    /* ensure no extra margin from <h2> */
+}
+
+/* ✅ Normalize spacing in Skills section */
+.skills-section-resume>.section-heading {
+    margin-bottom: 0;
+}
+
+.skills-section-resume>.skill-group:first-of-type {
+    margin-top: 1rem;
+}
+
+.skills-section-resume {
+    margin-top: 2rem;
+    /* Adjust until the top edges of the boxes align perfectly */
+}
+
+
+/* === Skill Group Toggle Header === */
+.skill-toggle-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.skill-toggle-header h3 {
+    font-size: 1.5rem;
+    font-family: "Jura", sans-serif;
+    color: #1F2232;
+    margin: 0;
+}
+
+
+/* === Animated Line to Arrow (Down) CSS === */
+/* Base button */
+.line-arrow {
+    position: relative;
+    width: 24px;
+    height: 6px;
+    cursor: pointer;
+    padding: 15px;
+    border: none;
+    background: none;
+    display: inline-block;
+}
+
+/* The two lines */
+.line-arrow .line {
+    position: absolute;
+    top: 55%;
+    width: 18px;
+    /* shorten for symmetry */
+    height: 3px;
+    border-radius: 2px;
+    background-color: #1F2232;
+    transition: transform 0.3s ease;
+}
+
+.line-arrow .line-1 {
+    right: 50%;
+    transform-origin: right center;
+    margin-right: -1px;
+
+}
+
+.line-arrow .line-2 {
+    left: 50%;
+    transform-origin: left center;
+    margin-left: -1px;
+
+}
+
+/* === Hover: arrow preview effect === */
+.line-arrow:hover .line-1 {
+    transform: rotate(25deg);
+}
+
+.line-arrow:hover .line-2 {
+    transform: rotate(-25deg);
+}
+
+/* === Clicked: arrow stays down while open === */
+.line-arrow.open .line-1 {
+    transform: rotate(25deg);
+}
+
+.line-arrow.open .line-2 {
+    transform: rotate(-25deg);
+}
+
+
+
+
+/* === Skill Reveal Animation === */
+.skill-toggle-content {
+    margin-top: 1rem;
+    animation: fadeSlideIn 0.3s ease;
+}
+
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === Dot Skill Row === */
+.dot-skill-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    font-family: "Jura", sans-serif;
+}
+
+/* Icon + Skill Label */
+.skill-name-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.skill-name-icon img,
+.skill-name-icon svg {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.skill-name {
+    font-weight: bold;
+    color: #1F2232;
+    font-size: 1rem;
+}
+
+/* Dot Level Bar */
+.dot-bar {
+    display: flex;
+    gap: 6px;
+    flex: 1;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #CDCFDF;
+}
+
+.dot.filled {
+    background-color: #E7C5D3;
+}
+
+/* Level Label */
+.skill-level-label {
+    font-size: 0.85rem;
+    color: #4F5969;
+    font-weight: 600;
+    width: 80px;
+    text-align: right;
+}
